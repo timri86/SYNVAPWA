@@ -2,7 +2,7 @@
   "name": "SUPERPWA LPDWCA",
   "short_name": "SUPERPWA",
   "start_url": "./",
-  "scope": "/",
+  "scope": "/SYNVAPWA/",
   "display": "standalone",
   "icons": [
     {
