@@ -168,9 +168,7 @@
            <div class="form-group">
             <label for="exampleInputEmail1">Votre nom</label>
             <input type="text" class="form-control" name="nom" id="nom">
-        
           </div>
-         
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         
@@ -225,7 +223,7 @@
             let form=document.getElementById('form');
             let name=document.getElementById('nom');
             
-            form.addEventListerner('submit',(event)=>{
+            form.addEventListener('submit',(event)=>{
                 event.preventDefault();
                 let storage=name.value;
                 localStorage.setItem('name', storage);
