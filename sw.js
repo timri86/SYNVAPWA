@@ -14,6 +14,7 @@ self.addEventListener('activate', evt => {
     console.log(evt);
 });
 self.addEventListener('fetch', evt=>{
+    if (!(evt.request.url.indexOf('http') === 0)) return;
     evt.respondWith(
         caches.match(evt.request).then(rep=>{
             if(rep){
