@@ -14,11 +14,6 @@ self.addEventListener('activate', evt => {
     console.log(evt);
 });
 self.addEventListener('fetch', evt=>{
-    console.log(evt.request.url);
-    console.log(navigator.onLine ? 'online' : 'offline')
-    if (!navigator.onLine){
-        evt.respondWith( new Response('pas de connexion internet'))
-    }
     evt.respondWith(
         caches.match(evt.request).then(rep=>{
             if(rep){
