@@ -171,6 +171,7 @@
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+            <div id="rendu"></div>
         
         </section>
         <!-- Call to action-->
@@ -228,6 +229,9 @@
                 let storage=name.value;
                 localStorage.setItem('name', storage);
             });
+            document.getElementById("rendu").innerHTML=localStorage.getItem('name');
+            
+            
           
 
         </script>
