@@ -9,4 +9,5 @@ self.addEventListener('fetch', evt => {
     if(!navigator.onLine){
         evt.respondWith(New Response('Pas de connexion pour ce site'));
     }
+    console.log(evt.request.url);
 });
