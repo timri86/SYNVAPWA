@@ -222,6 +222,14 @@
             if('serviceWorker' in navigator){
                 navigator.serviceWorker.register('sw.js')
             }
+            let form=document.getElementById('form');
+            let name=document.getElementById('nom');
+            
+            form.addEventListerner('submit',(event)=>{
+                event.preventDefault();
+                let storage=name.value;
+                localStorage.setItem('name', storage);
+            );
           
 
         </script>
