@@ -247,7 +247,12 @@
                     nom:name.value, 
                     message:message.value
                 }
-                let id=JSON.parse(localStorage.getItem("messages")).length;
+                if(localStorage.getItem("messages")){
+                    let id=JSON.parse(localStorage.getItem("messages")).length;
+                }else{
+                let i=1;
+                }
+                
                 console.log(id);
                 
                 localStorage.setItem(id+2, JSON.stringify(storage));
