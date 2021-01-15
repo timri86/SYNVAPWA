@@ -249,8 +249,7 @@
                 let messages=[];
                 
                 if(localStorage.getItem("messages")){
-                  messages= JSON.parse(localStorage.getItem("message"));
-                   
+                  messages= JSON.parse(localStorage.getItem("messages"));
                 }
             
                 let storage={
@@ -259,11 +258,15 @@
                 }
                 messages.push(storage);
                 console.log(messages)
-                localStorage.setItem(message, JSON.stringify(messages));
+                localStorage.setItem("messages", JSON.stringify(messages));
                
             });
             let smessages=JSON.parse(localStorage.getItem('messages'));
             console.log(smessages);
+            smessages.forEach(element=>{
+                
+            });
+            
         
             
          
