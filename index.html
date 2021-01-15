@@ -246,11 +246,11 @@
                 let storage={
                     nom:name.value, 
                     message:message.value
-                }
+                } 
+                let id=-1;
                 if(localStorage.getItem("messages")){
                     let id=JSON.parse(localStorage.getItem("messages")).length;
-                }else{
-                let id=-1;
+               
                 }
                 
                 console.log(id);
