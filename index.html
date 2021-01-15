@@ -164,14 +164,20 @@
             </div>
         </div>
         <section class="jumbotron">
-        <form id="form">
-           <div class="form-group">
-            <label for="exampleInputEmail1">Votre nom</label>
-            <input type="text" class="form-control" name="nom" id="nom">
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        <div class="row">
             <div id="rendu"></div>
+            <form id="form">
+               <div class="form-group">
+                <label for="exampleInputEmail1">Votre nom</label>
+                <input type="text" class="form-control" name="nom" id="nom">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Votre message</label>
+                 <input type="textarea" class="form-control" name="message" id="message">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
         
         </section>
         <!-- Call to action-->
@@ -233,11 +239,18 @@
             
             let form=document.getElementById("form");
             let name=document.getElementById("nom");
+            let message=document.getElementById("message");
             
             form.addEventListener('submit',(event)=>{
                 event.preventDefault();
-                let storage=name.value;
-                localStorage.setItem('name', storage);
+                let storage={
+                    nom:name.value, 
+                    message:message.value
+                }
+                let id=JSON.parse(localStorage.getItem("messages")).length;
+                console.log(id);
+                
+                localStorage.setItem(id+2, JSON.stringify(storage));
             });
             document.getElementById("rendu").innerHTML=localStorage.getItem('name');
             
