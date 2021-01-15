@@ -164,6 +164,8 @@
             </div>
         </div>
         <section class="jumbotron">
+           
+             <div id="rendu"></div>
         <div class="row">
             
             <form id="form">
@@ -177,7 +179,7 @@
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-            <div id="rendu"></div>
+           
         </div>
         
         </section>
@@ -257,13 +259,20 @@
                     'message':message.value
                 }
                 messages.push(storage);
-                console.log(messages)
+                console.log(messages);
                 localStorage.setItem("messages", JSON.stringify(messages));
                
             });
             let smessages=JSON.parse(localStorage.getItem('messages'));
             console.log(smessages);
+            let rendu= document.getElementById("rendu");
             smessages.forEach(element=>{
+                let p=document.createElement('P');
+                 p.innerHTML=element.nom;
+                let p2=document.createElement('P');
+                p2.innerHTML=element.message;
+                rendu.appendChild(p);
+                rendu.appendChild(p2);
                 
             });
             
