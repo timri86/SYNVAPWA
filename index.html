@@ -251,7 +251,19 @@
                 localStorage.setItem(id, JSON.stringify(storage));
             });
             document.getElementById("rendu").innerHTML=localStorage.getItem('name');
-            
+             if (window.Notification && window.Notification !== 'denied') {
+            Notification.requestPermission(perm => {
+// on vérifie ensuite que l’utilisateur a accepté l’affichage des notifications
+                if (perm === 'granted') {
+//on crée une notification 
+                  const notif= new Notification ('ma première notification')
+                } else {
+//si l’utilisateur a refusé de recevoir les notifications, on affiche un message dans //la console 
+                    console.log('autorisation de recevoir des notifications refusée');
+                }
+            })
+        }
+
             
           
 
