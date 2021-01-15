@@ -240,11 +240,15 @@
             
             let form=document.getElementById("form");
             let name=document.getElementById("nom");
+            let message=document.getElementById("message");
        
             
             form.addEventListener('submit',(event)=>{
                 event.preventDefault();
-                localStorage.setItem('name', name.value);
+                let lname=name.value;
+                let lmessage=message.value;
+                localStorage.setItem('name', lname);
+                 localStorage.setItem('name', lmessage);
             });
             
             document.getElementById("rendu").innerHTML=localStorage.getItem('name');
