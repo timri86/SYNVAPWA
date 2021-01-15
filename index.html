@@ -239,33 +239,16 @@
             
             let form=document.getElementById("form");
             let name=document.getElementById("nom");
-            let message=document.getElementById("message");
+       
             
             form.addEventListener('submit',(event)=>{
                 event.preventDefault();
-                let storage={
-                    nom:name.value, 
-                    message:message.value
-                } 
-                let id=Date.now();
-                localStorage.setItem(id, JSON.stringify(storage));
+                localStorage.setItem('name', name.value);
             });
-            document.getElementById("rendu").innerHTML=localStorage.getItem('name');
-             if (window.Notification && window.Notification !== 'denied') {
-            Notification.requestPermission(perm => {
-// on vérifie ensuite que l’utilisateur a accepté l’affichage des notifications
-                if (perm === 'granted') {
-//on crée une notification 
-                  const notif= new Notification ('ma première notification')
-                } else {
-//si l’utilisateur a refusé de recevoir les notifications, on affiche un message dans //la console 
-                    console.log('autorisation de recevoir des notifications refusée');
-                }
-            })
-        }
-
             
-          
+            document.getElementById("rendu").innerHTML=localStorage.getItem('name');
+            
+         
 
         </script>
     </body>
