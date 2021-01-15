@@ -54,7 +54,7 @@
         </header>
         
         <div class="container">
-             <section class="jumbotron">
+             <section class="jumbotron p-5">
              <div id="rendu"></div>
             <div class="row">
 
@@ -135,10 +135,23 @@
                 smessages.forEach(element=>{
                 let p=document.createElement('P');
                  p.innerHTML=element.nom+": "+element.message;
-                 p2.innerHTML=element.message;
                 rendu.appendChild(p);  
             });
             }
+            
+            if (window.Notification && window.Notification !== 'denied') {
+            Notification.requestPermission(perm => {
+// on vérifie ensuite que l’utilisateur a accepté l’affichage des notifications
+                if (perm === 'granted') {
+//on crée une notification 
+                  const notif= new Notification ('ma première notification')
+                } else {
+//si l’utilisateur a refusé de recevoir les notifications, on affiche un message dans //la console 
+                    console.log('autorisation de recevoir des notifications refusée');
+                }
+            })
+        }
+
             
             
         
