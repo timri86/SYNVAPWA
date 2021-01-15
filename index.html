@@ -263,18 +263,16 @@
                 localStorage.setItem("messages", JSON.stringify(messages));
                
             });
+            let rendu= document.getElementById("rendu");
             if(localStorage.getItem('messages')){
                 let smessages=JSON.parse(localStorage.getItem('messages'));
                 console.log(smessages);
-                let rendu= document.getElementById("rendu");
+                
                 smessages.forEach(element=>{
                 let p=document.createElement('P');
-                 p.innerHTML=element.nom;
-                let p2=document.createElement('P');
-                p2.innerHTML=element.message;
-                rendu.appendChild(p);
-                rendu.appendChild(p2);
-                
+                 p.innerHTML=element.nom+": "+element.message;
+                 p2.innerHTML=element.message;
+                rendu.appendChild(p);  
             });
             }
             
