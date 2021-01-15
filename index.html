@@ -245,13 +245,21 @@
             
             form.addEventListener('submit',(event)=>{
                 event.preventDefault();
+                
+                let messages=[];
+                
+                if(localStorage.getItem("message")){
+                  messages= JSON.parse(localStorage.getItem("message"));
+                   
+                }
             
                 let storage={
                     'nom':name.value,
                     'message':message.value
                 }
-                let id=Date.now();
-                localStorage.setItem(id, JSON.stringify(storage));
+                messages.push(storage);
+                console.log(messages)
+                localStorage.setItem(message, JSON.stringify(messages));
                
             });
         
