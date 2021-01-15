@@ -245,10 +245,14 @@
             
             form.addEventListener('submit',(event)=>{
                 event.preventDefault();
-                let lname=name.value;
-                let lmessage=message.value;
-                localStorage.setItem('name', lname);
-                 localStorage.setItem('message', lmessage);
+            
+                let storage={
+                    'nom':name.value,
+                    'message:message.value;
+                }
+                let id=Date.now();
+                localStorage.setItem(id, JSON.stringify(storage));
+               
             });
             
             document.getElementById("rendu").innerHTML=localStorage.getItem('name');
